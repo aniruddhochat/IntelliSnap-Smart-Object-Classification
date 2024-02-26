@@ -34,23 +34,7 @@ The custom CNN model has been fine tuned with various hyper-parameters and class
 •	Initially the pre-trained VGG16 model was used on our dataset to classify.  
 •	After achieving a test accuracy of around 91% using default parameters, we applied some fine-tuning such as l2 regularization, dropout layer, unfreezing 3 layers and could see that the testing accuracy now increased to 97%.  
 
-### Performance Analysis
-Apart from the above-mentioned testing for correctness and accuracy of the standard POSIX interface I have also tested the file system for its bandwidth, **IOPS (Input/Output Operations Per Second)**, and **latency using Flexible IO Tester (FIO)**. Two types of testing patterns such as **Sequential Read/Write** and **Random Read/Write** are available in FIO for which the testing has been carried out.
-
-Configure the `fio_fuse_fs.fio` file with the appropriate parameters.
-
-The detail and definition of each parameter is defined in [Benchmarking with FIO][1] and [FIO Parameters][2].  
-
-I have chosen to include only a few for the sake of testing.
-
-### FIO Execution
-•	Execute the command `fio ./fio_fuse_fs.fio` which will basically start the testing as per the defined configuration.
-•	Executing this gives us the summary statistics of the read and write operations in terms of **bandwidth (bw), IOPS (iops) and latency (lat)**.  
-
-The output of this performance testing is included in the `Performance-Testing-Output.txt` for reference.  
-
 ### Conclusion  
-#### Conclusion
 
 •	The Convolution Neural Network build from scratch gives an accuracy of 57.69% on the Testing set with a simple CNN layers without hyper parameter tuning.  
 
